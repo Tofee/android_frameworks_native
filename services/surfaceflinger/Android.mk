@@ -131,7 +131,7 @@ include $(BUILD_SHARED_LIBRARY)
 # build surfaceflinger's executable
 include $(CLEAR_VARS)
 
-LOCAL_LDFLAGS := -Wl,--version-script,art/sigchainlib/version-script.txt -Wl,--export-dynamic
+LOCAL_LDFLAGS := -Wl,--export-dynamic
 LOCAL_CFLAGS:= -DLOG_TAG=\"SurfaceFlinger\"
 LOCAL_CPPFLAGS:= -std=c++11
 
@@ -145,8 +145,6 @@ LOCAL_SHARED_LIBRARIES := \
 	libbinder \
 	libutils \
 	libdl
-
-LOCAL_WHOLE_STATIC_LIBRARIES := libsigchain
 
 LOCAL_MODULE:= surfaceflinger
 
